@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class MySet implements Set<Integer> {
 
-    Integer[] data = {} ;
+    Integer[] data = {};
 
     @Override
     public int size() {
@@ -55,10 +55,21 @@ public class MySet implements Set<Integer> {
     @Override
     public boolean add(Integer integer) {
 
+        //here
+        //actual ad implementation
+        //data[0] = (Integer)integer;//explicit type casting
+
+
+        //data array length is zero
+        //System.out.println(data.length);
+
+        //creating new array of length 1
         data = Arrays.copyOf(data, 1);
         //System.out.println(data.length);
-        data[0] = integer;
 
+        //data[0] is allocated memory as size is increased to 1
+        data[0] = (Integer) integer;//no explicit type casting as we are using generics
+        //System.out.println(data[0]);
         return true;
     }
 
